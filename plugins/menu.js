@@ -31,24 +31,24 @@ let tags = {
 }
 const defaultMenu = {
   before: `
-╭─「 %me 」
-│ %ucapan, %name!
+╭─❒「 %me 」
+│ %ucapan kak, %name!
 │
-│ Tanggal: *%week %weton, %date*
-│ Tanggal Islam: *%dateIslamic*
-│ Waktu: *%time*
+│ ❒ Tanggal: *%week %weton, %date*
+│ ❒ Tanggal Islam: *%dateIslamic*
+│ ❒ Waktu: *%time*
 │
-│ Uptime: *%uptime (%muptime)*
-│ Database: %rtotalreg of %totalreg
-│ Github:
-│ %github
-╰────
+│ ❒ Uptime: *%uptime (%muptime)*
+│ ❒ Database: %rtotalreg of %totalreg
+│ ❒ My Github:
+│ https://github.com/Ipulpachri
+╰────❒
 %readmore`.trimStart(),
-  header: '╭─「 %category 」',
-  body: '│ • %cmd %islimit %isPremium',
-  footer: '╰────\n',
+  header: '╭─❒「 %category 」',
+  body: '│ あ %cmd %islimit %isPremium',
+  footer: '╰────❒\n',
   after: `
-*%npmname@^%version*
+*Fachri@^%version*
 ${'```%npmdesc```'}
 `,
 }
@@ -111,7 +111,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
     let header = conn.menu.header || defaultMenu.header
     let body = conn.menu.body || defaultMenu.body
     let footer = conn.menu.footer || defaultMenu.footer
-    let after = conn.menu.after || (conn.user.jid == global.conn.user.jid ? '' : `Powered by https://wa.me/${global.conn.user.jid.split`@`[0]}`) + defaultMenu.after
+    let after = conn.menu.after || (conn.user.jid == global.conn.user.jid ? '' : `Made in by https://wa.me/${global.conn.user.jid.split`@`[0]}`) + defaultMenu.after
     let _text = [
       before,
       ...Object.keys(tags).map(tag => {
@@ -120,7 +120,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
             return menu.help.map(help => {
               return body.replace(/%cmd/g, menu.prefix ? help : '%p' + help)
                 .replace(/%islimit/g, menu.limit ? '(Limit)' : '')
-                .replace(/%isPremium/g, menu.premium ? '(Premium)' : '')
+                .replace(/%isPremium/g, menu.premium ? '(Limit)' : '')
                 .trim()
             }).join('\n')
           }),
@@ -145,9 +145,9 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
     let pp = await conn.getProfilePicture(conn.user.jid).catch(_ => path.join(__dirname, '../src/avatar_contact.png'))
     conn.sendButton(m.chat,text.trim(), author,  pp,  [
-  ['Ping',  '/ping'],
-  ['Info',  '/info'],
-  ['Owner',  '/owner']
+  ['⋮☰ Ping',  '/ping'],
+  ['⋮☰ Info',  '/info'],
+  ['⋮☰ Owner',  '/owner']
 ], { quoted: m}).catch(_ => conn.sendFile(m.chat, pp, 'menu.jpg', text.trim(), m)).catch(_ => conn.reply(m.chat, text.trim(), m))
   } catch (e) {
     conn.reply(m.chat, 'Maaf, menu sedang error', m)
@@ -184,16 +184,16 @@ function ucapan() {
   const time = (new Date().getUTCHours() + 7) % 24
   res = "Woi. Pagi"
   if (time >= 4) {
-    res = "Selamat Pagi"
+    res = "Selamat Pagi🌅"
   }
   if (time >= 12) {
-    res = "Selamat Siang"
+    res = "Selamat Siang🌅"
   }
   if (time >= 15) {
-    res = "Selamat Sore"
+    res = "Selamat Sore🌇"
   }
   if (time >= 19) {
-    res = "Selamat Malam"
+    res = "Selamat Malam🌃"
   }
   return res
 }
