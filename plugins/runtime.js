@@ -1,8 +1,8 @@
 let { performance } = require('perf_hooks')
 let fs = require('fs')
 let { MessageType } = require('@adiwajshing/baileys')
-let peli = fs.readFileSync('./emror.jpeg')
-let pelo = fs.readFileSync('./emror.jpeg')
+let peli = fs.readFileSync('./IMG_20220121_160604.jpg')
+let pelo = fs.readFileSync('./IMG_20220121_160604.jpg')
 let handler = async (m, { conn }) => {
 function kyun(seconds){
   function pad(s){
