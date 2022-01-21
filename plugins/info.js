@@ -10,10 +10,10 @@ let handler  = async (m, { conn, usedPrefix }) => {
   await m.reply('Wait Kakak!!')
   let neww = Math.round(performance.now())
   conn.reply(m.chat, `
-╠═〘 ${package.name} 〙 ═
+╠═〘 *SF BOTZ* 〙 ═
 ╠➥ *Versi:* ${package.version}
-╠➥ *HomePage:* ${(package.homepage ? package.homepage.url || package.homepage : '[unknown github url]')}
-╠➥ *Issue:* ${package.bugs.url}
+╠➥ *HomePage:*
+╠➥ *Issue:* 
 ╠➥ *Prefix:* ' ${usedPrefix} '
 ╠➥ *Menu:* ${usedPrefix}menu
 ╠➥ *Ping:* ${neww - old} *ms*
@@ -21,15 +21,15 @@ let handler  = async (m, { conn, usedPrefix }) => {
 ╠➥ *Uptime:* ${uptime}
 ║
 ╠═〘 DONASI 〙 ═
-╠➥ Gopay: 085713964963
-╠➥ Indosat: 085713964963
+╠➥ Gopay: 
+╠➥ Indosat: 
 ║
-╠═ Request? ${package.bugs.url}
+╠═ Request? wa.me/6285713041886
 ╠═ Official Group *${conn.user.name}* :
 ${(global.linkGC).map((v, i) => '║ *Group ' + (i + 1) + '*\n║' + v).join`\n║\n`}
 ║
 ║${readMore}
-╠═〘 SYARAT & KETENTUAN Games-wabot 〙 ═
+╠═〘 SYARAT & KETENTUAN SF BOTZ 〙 ═
 ╠➥ *KAMI TIDAK BERTANGGUNG*
 ║   *JAWAB ATAS PENYALAH*
 ║   *GUNAAN BOT*
@@ -41,9 +41,10 @@ ${(global.linkGC).map((v, i) => '║ *Group ' + (i + 1) + '*\n║' + v).join`\n�
 ║   *ANDA DI DATABASE KAMI*
 ║ 
 ║ 
-╠═ ©2021 ${package.name}
-╠═ Script original by Nurutomo
-╠═〘 METRO BOT 〙 ═
+╠═ ©2022 SF BOTZ
+╠═ Script original by Nurutomo 
+╠═ recode by Fachri
+╠═〘 SF BOTZ 〙 ═
 `.trim(), m)
 }
 handler.help = ['info']
