@@ -12,7 +12,7 @@ let handler  = async (m, { conn, usedPrefix }) => {
   conn.reply(m.chat, `
 ╠═〘 *SF BOTZ* 〙 ═
 ╠➥ *Versi:* ${package.version}
-╠➥ *HomePage:*
+╠➥ *HomePage:* https://github.com/Ipulpachri
 ╠➥ *Issue:* 
 ╠➥ *Prefix:* ' ${usedPrefix} '
 ╠➥ *Menu:* ${usedPrefix}menu
@@ -24,7 +24,7 @@ let handler  = async (m, { conn, usedPrefix }) => {
 ╠➥ Gopay: 
 ╠➥ Indosat: 
 ║
-╠═ Request? wa.me/6285713041886
+╠═ Request? https://github.com/Ipulpachri/request
 ╠═ Official Group *${conn.user.name}* :
 ${(global.linkGC).map((v, i) => '║ *Group ' + (i + 1) + '*\n║' + v).join`\n║\n`}
 ║
