@@ -4,12 +4,12 @@ global.Owner = {
   // use the phone number with the country code, for example Indonesia '62' America '1' etc
   '6285713041886': { // put your number here
     name: 'Owner SF BOTZ',
-    isDev: false, // if true this number will send if bot have bug and developer mode true
+    isDev: true, // if true this number will send if bot have bug and developer mode true
     isReport: false, // if true this number will send if user use command /report or /join
     isCreator: true // if true this number will send if user use command /owner or /creator
   },
   '6285713041886': { // put your number here
-    isDev: true, // if true this number will send if bot have bug and developer mode true
+    isDev: false, // if true this number will send if bot have bug and developer mode true
     isReport: true, // if true this number will send if user use command /report or /join
     isCreator: false // if true this number will send if user use command /owner or /creator
   },
@@ -19,10 +19,10 @@ global.Owner = {
     isReport: false, // if true this number will send if user use command /report or /join
     isCreator: true // if true this number will send if user use command /owner or /creator
   },
-  '6285642429852': {
+  '6285713041886': {
     isReport: true // if true this number will send if user use command /report or /join
   },
-  '13479805233': {} // ignore if you don't want anything, like name dll
+  '6285713041886': {} // ignore if you don't want anything, like name dll
 }
 global.mods = ['13479805233'] // Want some help?
 global.prems = ['6285713041886'] // Premium user has unlimited limit
